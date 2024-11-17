@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Commissioner:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+  /* Colors */
+  --desaturatedDarkCyan: hsl(180, 29%, 50%);
+  --lightGrayishCyanBackground: hsl(180, 52%, 96%);
+  --lightGrayishCyanFilterTablets: hsl(0, 0%, 100%);
+  --darkGrayishCyan: hsl(180, 8%, 52%);
+  --veryDarkGrayishCyan: hsl(180, 14%, 20%);
+  /* Font */
+  --fs: 15px;
+  --fwMedium: 500;
+  --fwBold: 700;
+  --ff: "League Spartan", sans-serif;
+}
+
+* > *,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--fs);
+  font-family: var(--ff);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--lightGrayishCyanBackground);
+}
+
+.bg-container {
+  height: 10em;
+  background-image: url(images/bg-header-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--desaturatedDarkCyan);
+}
+
+.filter-bar,
+.listing-jobs {
+  transform: translateY(-30px);
+}
+
+.filter-bar {
+  width: 1200px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin-inline: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.filter-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  height: 27.5px;
+  display: flex;
+  align-items: center;
+}
+
+.tag-name {
+  height: 100%;
+  padding-inline: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fwMedium);
+  color: var(--desaturatedDarkCyan);
+  border-radius: 5px 0 0 5px;
+  background-color: hsla(180, 49%, 91%, 0.6);
+  cursor: pointer;
+}
+
+.close-filter-btn {
+  height: 27.5px;
+  padding-inline: 5px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--desaturatedDarkCyan);
+  cursor: pointer;
+}
+.close-filter-btn:hover {
+  background-color: var(--veryDarkGrayishCyan);
+}
+
+.clear-filter-btn {
+  font-weight: var(--fwMedium);
+  border: none;
+  color: var(--desaturatedDarkCyan);
+  background-color: transparent;
+  cursor: pointer;
+}
+.clear-filter-btn:hover {
+  text-decoration: underline;
+}
+
+.listing-jobs {
+  width: 1200px;
+  margin: 5em auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1.5em;
+}
+
+.job {
+  padding: 27.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid var(--desaturatedDarkCyan);
+  border-radius: 8px;
+  background-color: var(--lightGrayishCyanFilterTablets);
+  position: relative;
+}
+
+.job-data {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+}
+
+.job-info-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company {
+  font-weight: var(--fwMedium);
+  color: var(--desaturatedDarkCyan);
+  margin-right: 15px;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.new,
+.featured {
+  padding-inline: 8px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-weight: var(--fwBold);
+  color: hsl(0, 0%, 100%);
+}
+.new {
+  background-color: var(--desaturatedDarkCyan);
+}
+.featured {
+  background-color: var(--veryDarkGrayishCyan);
+}
+
+.position {
+  font-size: 18px;
+  font-weight: var(--fwBold);
+  color: var(--veryDarkGrayishCyan);
+  cursor: pointer;
+}
+.position:hover {
+  color: var(--desaturatedDarkCyan);
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.details span {
+  font-weight: var(--fwMedium);
+  color: var(--darkGrayishCyan);
+}
+.details span:not(:last-of-type) {
+  position: relative;
+}
+
+.details span:not(:last-of-type)::before {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: ".";
+  top: 50%;
+  right: -13px;
+  transform: translateY(-75%);
+}
+
+.job-tags {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.job-tags span {
+  padding-inline: 8px;
+  height: 27.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(25%);
+  font-weight: var(--fwMedium);
+  color: var(--desaturatedDarkCyan);
+  border-radius: 5px;
+  background-color: hsla(180, 49%, 91%, 0.6);
+  cursor: pointer;
+}
+.job-tags span:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: var(--desaturatedDarkCyan);
+}
+
+@media (max-width: 1320px) {
+  .listing-jobs,
+  .filter-bar {
+    max-width: 90% !important;
+  }
+}
+@media (max-width: 1000px) {
+  .job-tags {
+    width: 40%;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 800px) {
+  .bg-container {
+    background-image: url(images/bg-header-mobile.svg);
+  }
+  .listing-jobs {
+    gap: 2.5em;
+  }
+  .job {
+    display: inline-block;
+    padding-inline: 25px;
+    padding-block: 40px 30px;
+  }
+  .job-tags {
+    width: 100%;
+    border-top: 1.5px solid var(--darkGrayishCyan);
+    padding-top: 0.75em;
+    margin-top: 1.5em;
+  }
+  .job-logo {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    top: calc(-1 * (var(--size) / 2));
+    left: 25px;
+  }
+}
+@media (max-width: 335px) {
+  .job-info-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
